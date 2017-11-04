@@ -1,3 +1,47 @@
-<app-navbar></app-navbar>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header col-lg-8">
+            <a href="/" class="navbar-brand">anthony bennett</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()" [ngClass]="{'collapsed': isCollapsed}">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- Actual navbar -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" [ngClass]="{'in': !isCollapsed}">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+                <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+                <li class="dropdown" dropdown>
+                    <a dropdownToggle role="button"> 
+                      Projects <span class="caret"></span></a>
+                    <ul *dropdownMenu class="dropdown-menu"> 
+                        <li><a href="/projects/quickeat">QuickEat</a></li>
+                        <li><a href="/projects/discord">Discord Music Bot</a></li>
+                        <li><a href="/">Something else here</a></li>
+                    </ul>
+                </li>
+                <li><a role="button" (click)="openModal(template)">Contact</a></li>
+                <ng-template #template>
+                    <div class="modal-header">
+                        <h4 class="modal-title pull-left">Contact</h4>
+                        <button type="button" class="close pull-right" 
+                            aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <app-contact></app-contact>
+                    </div>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
+    <router-outlet></router-outlet>
 </div>
