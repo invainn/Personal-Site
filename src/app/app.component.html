@@ -13,14 +13,14 @@
         <!-- Actual navbar -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" [ngClass]="{'in': !isCollapsed}">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-                <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+                <li routerLinkActive="active"><a (click)="toggleCollapse()" routerLink="/home">Home</a></li>
+                <li routerLinkActive="active"><a (click)="toggleCollapse()" routerLink="/about">About</a></li>
                 <li routerLinkActive="active" class="dropdown" dropdown>
                     <a dropdownToggle role="button"> 
                       Projects <span class="caret"></span></a>
                     <ul *dropdownMenu class="dropdown-menu"> 
-                        <li><a routerLink="/projects/quickeat">QuickEat</a></li>
-                        <li><a routerLink="/projects/discord">Discord Music Bot</a></li>
+                        <li><a routerLink="/projects/quickeat" (click)="toggleCollapse()">QuickEat</a></li>
+                        <li><a (click)="toggleCollapse()" routerLink="/projects/discord">Discord Music Bot</a></li>
                         <li><a>Something else here</a></li>
                     </ul>
                 </li>
