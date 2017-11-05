@@ -12,6 +12,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 export class AppComponent {
 
   public isCollapsed: boolean = true;
+  public mobileMode: boolean = false;
   public modalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) { }
@@ -25,5 +26,15 @@ export class AppComponent {
 
   toggleCollapse(): void {
   	this.isCollapsed = !this.isCollapsed;
+  }
+
+  toggleOutsideCollapse(): void {
+    if(!this.isCollapsed) {
+      this.isCollapsed = !this.isCollapsed;
+    }
+  }
+
+  toggleMobile(): void {
+    this.mobileMode = !this.mobileMode;
   }
 }

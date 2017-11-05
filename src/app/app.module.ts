@@ -10,38 +10,51 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { HomeComponent } from './home/home.component';
-import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProjectComponent } from './project/project.component';
 
 const appRoutes: Routes = [
+  {
+    path:'',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   {
     path:'home',
     component: HomeComponent
   },
   {
-    path: 'about',
+    path:'about',
     component: AboutComponent
   },
   {
-    path: '**',
-    redirectTo: '/home'
+    path:'projects',
+    pathMatch: 'prefix',
+    children: [
+    {
+      path: 'quickeat',
+      component: ProjectComponent
+    },
+    {
+      path: 'discord',
+      component: ProjectComponent
+    },
+    ]
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
-
+    path:'**',
+    redirectTo: '/home'
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotfoundComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

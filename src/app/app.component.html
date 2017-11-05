@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header col-lg-8">
+        <div class="navbar-header col-lg-8" dropdown>
             <a href="/" class="navbar-brand">anthony bennett</a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
           [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()" [ngClass]="{'collapsed': isCollapsed}">
@@ -15,13 +15,13 @@
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
                 <li routerLinkActive="active"><a routerLink="/about">About</a></li>
-                <li class="dropdown" dropdown>
+                <li routerLinkActive="active" class="dropdown" dropdown>
                     <a dropdownToggle role="button"> 
                       Projects <span class="caret"></span></a>
                     <ul *dropdownMenu class="dropdown-menu"> 
-                        <li><a href="/projects/quickeat">QuickEat</a></li>
-                        <li><a href="/projects/discord">Discord Music Bot</a></li>
-                        <li><a href="/">Something else here</a></li>
+                        <li><a routerLink="/projects/quickeat">QuickEat</a></li>
+                        <li><a routerLink="/projects/discord">Discord Music Bot</a></li>
+                        <li><a>Something else here</a></li>
                     </ul>
                 </li>
                 <li><a role="button" (click)="openModal(template)">Contact</a></li>
@@ -42,6 +42,16 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container bottomspace" (click)="toggleOutsideCollapse()">
     <router-outlet></router-outlet>
 </div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p>
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+    </p>
+  </div>
+</nav>

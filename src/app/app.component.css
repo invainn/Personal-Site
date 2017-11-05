@@ -7,3 +7,21 @@ h2 {
 .jumbotron {
 	margin-top: 500px;
 }
+
+.bottomspace {
+	margin-bottom: 50px;
+}
+
+.navbar-fixed-bottom {
+	align-content: center;
+	padding-top: 15px;
+}
+
+.navbar .container i {
+	padding-right: 10px;
+}
+
+.navbar p {
+	text-align: center;
+}
+
