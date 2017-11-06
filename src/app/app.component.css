@@ -25,3 +25,11 @@ h2 {
 	text-align: center;
 }
 
+p a {
+	color: black;
+}
+
+p a:hover {
+	color: grey;
+}
+
