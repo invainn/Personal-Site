@@ -12,7 +12,6 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProjectComponent } from './project/project.component';
 import { QuickeatComponent } from './quickeat/quickeat.component';
 import { DiscordComponent } from './discord/discord.component';
 
@@ -56,7 +55,6 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProjectComponent,
     QuickeatComponent,
     DiscordComponent
   ],
