@@ -4,10 +4,6 @@ h2 {
 	text-align: center;
 }
 
-.jumbotron {
-	margin-top: 500px;
-}
-
 .bottomspace {
 	margin-bottom: 50px;
 }
@@ -25,11 +21,25 @@ h2 {
 	text-align: center;
 }
 
+.light {
+	font-weight: 300;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
 p a {
 	color: black;
 }
 
 p a:hover {
+	transition: color 0.2s ease;
 	color: grey;
 }
 

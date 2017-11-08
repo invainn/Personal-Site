@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default navbar-fixed-top bg-faded">
+<nav class="navbar navbar-default navbar-fixed-top bg-faded text-muted light">
     <div class="container">
         <div class="navbar-header col-lg-8" dropdown>
-            <a href="/" class="navbar-brand">antbnt</a>
+            <a href="/" class="navbar-brand"><span class="title">anthony bennett</span></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
           [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()" [ngClass]="{'collapsed': isCollapsed}">
             <span class="sr-only">Toggle navigation</span>
@@ -18,8 +18,8 @@
                     <a dropdownToggle role="button"> 
                       Projects <span class="caret"></span></a>
                     <ul *dropdownMenu class="dropdown-menu"> 
-                        <li><a routerLink="/projects/quickeat" (click)="toggleCollapse()">QuickEat</a></li>
-                        <li><a (click)="toggleCollapse()" routerLink="/projects/discord">Discord Music Bot</a></li>
+                        <li><a routerLink="/projects/quickeat" (click)="toggleCollapse()" class="light">QuickEat</a></li>
+                        <li><a (click)="toggleCollapse()" routerLink="/projects/discord" class="light">Discord Music Bot</a></li>
                     </ul>
                 </li>
                 <li><a href="resume.pdf">Resume</a></li>
@@ -41,8 +41,10 @@
     </div>
 </nav>
 
-<div class="container bottomspace" (click)="toggleOutsideCollapse()">
-    <router-outlet></router-outlet>
+<div class="vertical-center">
+    <div class="container bottomspace" (click)="toggleOutsideCollapse()">
+            <router-outlet></router-outlet>
+    </div>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom bg-faded">
